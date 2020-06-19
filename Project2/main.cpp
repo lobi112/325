@@ -27,8 +27,8 @@ int main()
 
 	switch ( abs(start_x - finish_x) + abs(start_y - finish_y) )
 	{
-		case 3: ans = "1"; break;
 		case 0: case 2: case 4: case 6: ans = "2"; break;
+		case 3: if ( abs(start_x - finish_x) % 3 != 0) { ans = "1"; break; }
 		default: ans = "NO";
 	}
 
