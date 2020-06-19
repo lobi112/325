@@ -25,13 +25,19 @@ int main()
 
 	input_file.close();
 
-	switch ( abs(start_x - finish_x) + abs(start_y - finish_y) )
+	if ( abs(start_x - finish_x) > 4 || abs(start_y - finish_y) > 4)
 	{
-		case 0: case 2: case 4: case 6: ans = "2"; break;
-		case 3: if ( abs(start_x - finish_x) % 3 != 0) { ans = "1"; break; }
-		default: ans = "NO";
+		ans = "NO";
 	}
-
+	else
+	{
+		switch ( abs(start_x - finish_x) + abs(start_y - finish_y) )
+		{
+			case 0: case 2: case 4: case 6:  ans = "2"; break;
+			case 3: if ( abs(start_x - finish_x) % 3 != 0) { ans = "1"; break; }
+			default: ans = "NO";
+		}
+	}
 
 	ofstream output_file;
 
